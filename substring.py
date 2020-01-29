@@ -1,18 +1,17 @@
 x=input("enter string:")
 y=input("enter substring:")
 s,i,j=[],0,0
-while(i<len(x)):
-    if (i+j)<len(x)-1 and j<len(y):
-        if x[i+j]!=y[j]:
-            i+=1
-            j=0
-            continue
-        if j<len(y):
-            j+=1
-        elif j==len(y):
-            break
+while(j<len(y) and i<len(x)):
+    if x[i]==y[j]:
+        s.append(x[i])
+        i+=1
+        j+=1
+        continue
+    elif s!=[]:
+        s=[]
+        j=0
     else:
-        break
+        i+=1
 if j==len(y):
     print("yes")
 else:
